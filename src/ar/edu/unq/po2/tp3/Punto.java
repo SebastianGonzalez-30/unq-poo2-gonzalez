@@ -6,9 +6,13 @@ public class Punto {
 	private float y;
 	
 	public Punto(float x, float y) {
-		super();
+		
 		this.x = x;
 		this.y = y;
+	}
+	
+	public Punto() {
+	    this(0, 0); // si no se le pasan valores los por defecto son 0 0
 	}
 
 	public float getX() {
@@ -27,7 +31,19 @@ public class Punto {
 		this.y = y;
 	}
 	
+	public void moverPunto(float nuevaX, float nuevaY) {
+		
+		this.setX(nuevaX);
+		this.setY(nuevaY);
+	}
 	
-	
-	
+	public Punto sumarCon(Punto otroPunto) {
+		
+		float nuevaX= this.getX() + otroPunto.getX();
+		float nuevaY= this.getY() + otroPunto.getY();
+		
+		return new Punto(nuevaX, nuevaY);
+	}
 }
+
+
